@@ -1,0 +1,50 @@
+<!doctype html>
+
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<title>Python LT</title>
+
+<meta name="description" content="Python LT">
+<link rel="stylesheet" href="style.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+<script>
+function initialize() {
+var mapProp = {
+center:new google.maps.LatLng(54.6825234,25.2632536),
+zoom:17,
+mapTypeId:google.maps.MapTypeId.ROADMAP
+};
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+var marker = new google.maps.Marker({
+position: new google.maps.LatLng(54.6825234,25.2632536),
+map: map,
+title: 'Hello World!'
+});
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+</head>
+
+<body>
+<div class="container">
+<div class="top">
+	<div style="text-align: center"><img src="python-logo.png" alt="Python Logo"></div>
+	<div class="links">
+	<p style="color: white; font-size: 22px;">Nuorodos</p>
+	<a href="http://www.pycon.lt" class="btn btn-primary btn-lg active" role="button">Pycon.lt</a>
+	<a href="http://www.pylab.lt" class="btn btn-primary btn-lg active" role="button">Pylab.lt</a>
+	<a href="http://www.python.org" class="btn btn-primary btn-lg active" role="button">Python.org</a>
+	</div>
+</div>
+<div class="bottom">	
+<p style="font-size: 22px;">Pylab žemėlapyje </p>
+<div id="googleMap"></div>
+
+
+</div>
+</div>
+</body>
+</html>
