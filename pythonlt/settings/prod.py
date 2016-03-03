@@ -1,8 +1,8 @@
-from .base import *  # noqa
+from pythonlt.settigns.base import *  # noqa
+from pythonlt.secretkey import get_secret_key
 
-# Secret key generator: https://djskgen.herokuapp.com/
-# You should set your key as an environ variable
-SECRET_KEY = os.environ.get("SECRET_KEY", "")
+
+SECRET_KEY = get_secret_key(os.path.join(BASE_DIR, 'var', 'secretkey'))
 
 # Keep templates in memory
 del TEMPLATES[0]['APP_DIRS']
