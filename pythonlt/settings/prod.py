@@ -1,4 +1,4 @@
-from pythonlt.settigns.base import *  # noqa
+from pythonlt.settings.base import *  # noqa
 from pythonlt.secretkey import get_secret_key
 
 
