@@ -11,6 +11,7 @@ django-spirit==0.4.7
 Django==1.8.10            # via django-haystack, django-spirit
 mistune==0.7.1            # via django-spirit
 Pillow==3.1.0             # via django-spirit
+psycopg2==2.6.1
 pytz==2015.7              # via django-spirit
 six==1.10.0               # via unicode-slugify
 unicode-slugify==0.1.3    # via django-spirit
