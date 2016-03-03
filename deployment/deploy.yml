@@ -69,7 +69,7 @@
     sudo_user: "{{ slug }}"
 
   - name: install project depencencies from requirements.txt
-    command: "{{ home }}/venv/bin/pip install -r requirements.txt chdir={{ path }}"
+    command: "{{ home }}/venv/bin/pip install -r requirements.txt -e . chdir={{ path }}"
     sudo_user: "{{ slug }}"
 
   # Apache
@@ -80,6 +80,9 @@
     - rewrite
     - ssl
     notify: restart apache
+
+  - stat: path=/etc/letsencrypt/live/{{ server_name }}
+    register: letsencryptcert
 
   - name: set up apache virtual host
     template: src=templates/apache.conf dest=/etc/apache2/sites-enabled/{{ server_name }}.conf
@@ -118,6 +121,16 @@
         --authenticator apache
       creates=/etc/letsencrypt/live/{{ server_name }}
     notify: reload apache
+    register: letsencrypt
+
+  - stat: path=/etc/letsencrypt/live/{{ server_name }}
+    register: letsencryptcert
+    when: letsencrypt.changed
+
+  - name: apache config after letsencrypt
+    template: src=templates/apache.conf dest=/etc/apache2/sites-enabled/{{ name }}.conf
+    notify: reload apache
+    when: letsencrypt.changed
 
 
   handlers:
