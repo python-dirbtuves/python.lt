@@ -12,7 +12,7 @@ ubuntu:
 
 fedora:
 	sudo dnf update
-	sudo dnf install 'dnf-command(builddep)'
+	sudo dnf -y install 'dnf-command(builddep)'
 	sudo dnf -y builddep python-lxml python-imaging python-psycopg2
 	sudo dnf -y install python-virtualenv
 
