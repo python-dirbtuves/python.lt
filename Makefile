@@ -7,7 +7,7 @@ help:
 
 ubuntu:
 	sudo apt-get update
-	sudo apt-get -y build-dep python-lxml python-psycopg2
+	sudo apt-get -y build-dep python-lxml python-imaging python-psycopg2
 	sudo apt-get -y install python-virtualenv
 
 var/env/bin/python:
