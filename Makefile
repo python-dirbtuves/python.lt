@@ -10,6 +10,12 @@ ubuntu:
 	sudo apt-get -y build-dep python-lxml python-imaging python-psycopg2
 	sudo apt-get -y install python-virtualenv
 
+fedora:
+	sudo dnf update
+	sudo dnf install 'dnf-command(builddep)'
+	sudo dnf -y builddep python-lxml python-imaging python-psycopg2
+	sudo dnf -y install python-virtualenv
+
 var/env/bin/python:
 	virtualenv -p $(shell which python3.4) var/env
 
