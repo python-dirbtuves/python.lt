@@ -11,7 +11,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 ADMINS = (('sirex', 'sirexas@gmail.com'),)
 
 # You can change this to something like 'MyForum <noreply@example.com>'
-DEFAULT_FROM_EMAIL = 'sirexas@gmail.com'  # Django default
+DEFAULT_FROM_EMAIL = 'no-reply@python.lt'  # Django default
 SERVER_EMAIL = DEFAULT_FROM_EMAIL  # For error notifications
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
